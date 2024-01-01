@@ -1,5 +1,5 @@
 {
-  "name": "aFramePano",
+  "name": "a-frame-pano",
   "version": "1.0.0",
   "description": "Use a-frame to display a 180 panorama image.",
   "main": "aFramePano.html",
