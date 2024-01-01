@@ -1,0 +1,102 @@
+#vrLoader {
+  padding: 20px;
+}
+
+.a-enter-vr,
+.a-enter-ar {
+  dispay: hidden !important;
+}
+
+#myEnterVRButton,
+#changeScene {
+  position: absolute;
+  z-index: 9999;
+  background-color: black;
+  padding: 15px 10px 10px 10px;
+  border-radius: 5px;
+  rotate: -90deg;
+  color: white;
+  text-decoration: none;
+  width: 70px;
+}
+#myEnterVRButton {
+  bottom: 0px;
+  left: -20px;
+}
+#changeScene {
+  bottom: 100px;
+  left: -20px;
+}
+
+#AFrScene {
+  height: 50vh;
+}
+
+[id*="open-sandbox"] {
+  display: none !important;
+}
+
+#fileList {
+  display: flex;
+  flex-wrap: wrap;
+}
+#fileList .listContain {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-wrap: nowrap;
+  overflow: hidden;
+  border: solid 2px black;
+  margin: 5px;
+}
+.listContent,
+.pictContent,
+.remove-list {
+  position: absolute;
+}
+.remove-list {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  right: 0px;
+  width: 20px;
+  height: 20px;
+  background-color: #c84242;
+  color: white;
+  line-height: 16px;
+}
+
+.remove-list:hover {
+  color: red;
+  background-color: #ddd;
+}
+
+.listContent {
+  background-color: #444;
+  color: white;
+  font-size: x-small;
+  height: 20px;
+  width: 100%;
+}
+
+#tapArea {
+  display: block;
+  border: none 0px red;
+  padding: 10px;
+  z-index: 999;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: none;
+  color: white;
+  font-weight: bold;
+  width: 50%;
+  height: 40vh;
+  margin: auto;
+  cursor: pointer;
+  text-align: center;
+}
