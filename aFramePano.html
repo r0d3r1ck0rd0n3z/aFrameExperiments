@@ -22,7 +22,7 @@
     />
 
     <title>aFrame - Load strip panorama from local</title>
-    <link rel="stylesheet" href="aFramePano.css" />
+    <link rel="stylesheet" href="buttonB.css" />
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/DougReeder/aframe-button-controls@master/aframe-button-controls.js"></script>
     <script>
@@ -64,21 +64,20 @@
     <div id="vrLoader" style="display: block">
       <div class="custom-file">
         <p>Select multiple strip panorama images in JPEG format:</p>
-        <input
-          multiple
-          type="file"
-          id="uploaded"
-          onchange="javascript:updateList()"
-        />
+        <input multiple type="file" id="uploaded" onchange="updateList()" />
       </div>
       <br />
       <div id="fileList" class="file-list"></div>
+      <br /><br />
+      <hr />
+      <button type="button" id="countMeter" onclick="processAllIMG()" disabled>
+        <i>No images found</i></button
+      ><br /><br />
+      <div id="countNote">Using too many images may impact performance.</div>
     </div>
 
     <!-- /////////////////////////////////////////// -->
     <div id="AFrScene"></div>
-
-    <div id="tapArea" style="display: none">&nbsp;&nbsp;&nbsp;</div>
 
     <!-- /////////////////////////////////////////// -->
     <!-- TEMPLATE FOR A-SCENE -->
@@ -90,7 +89,12 @@
               cardboardModeEnabled: true; 
               enterVREnabled: true"
       >
-        <a-assets> </a-assets>
+        <a-assets>
+          <a-mixin
+            id="growA"
+            animation="property: radius; from: 0.1; to: 0.5; dur: 300; easing: linear; loop: false"
+          ></a-mixin>
+        </a-assets>
 
         <a-curvedimage
           src="#myImage0"
@@ -108,11 +112,11 @@
           material="color: #ef0606;"
           geometry="radius: 0.5"
           position="0.00003 -2.46715 -5.46565"
-          animation="property: radius; from: 0.1; to: 0.5; dur: 300; easing: linear; loop: false"
+          text="value: NEXT"
         ></a-circle>
 
         <a-camera>
-          <a-cursor></a-cursor>
+          <a-cursor material="color: aqua;"></a-cursor>
         </a-camera>
         <a id="myEnterVRButton" href="#"> vr mode</a>
         <a id="changeScene" href="#"> next</a>
@@ -127,7 +131,7 @@
         <span class="listContent"></span>
         <span
           class="remove-list"
-          onclick="return this.parentNode.remove()"
+          onclick="javascript:removeFomList(this.parentNode);"
           title="Remove this image &#013;from the list"
         >
           &times;
@@ -137,6 +141,6 @@
 
     <!-- /////////////////////////////////////////// -->
 
-    <script src="aFramePano.js"></script>
+    <script src="buttonA.js"></script>
   </body>
 </html>
