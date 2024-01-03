@@ -83,6 +83,7 @@ function createVRgallery(newVRview) {
   }
   changeScene = document.querySelector("#changeScene");
   changeScene.addEventListener("click", showNext);
+  circleColor();
   ++S;
 }
 
@@ -93,6 +94,22 @@ function showNext() {
   curvedI.setAttribute("src", "#myImage" + R);
   ++R;
 }
+
+// Add function to red button
+function doThisWhenClicked() {}
+function circleColor() {
+  const el = document.querySelector("#circleBTN");
+  el.addEventListener("mouseenter", function () {
+    doThisWhenClicked = () => { showNext() };
+    el.setAttribute("color", "blue");
+  });
+
+  el.addEventListener("mouseleave", function () {
+    el.setAttribute("color", "red");
+    doThisWhenClicked = () => {};
+  });
+}
+
 /*
-&nbsp;
+&nbsp; === END ===
 */
