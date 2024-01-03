@@ -32,16 +32,10 @@
 
           this.handlers = {
             buttondown: function (evt) {
-              // console.log(evt);
-              try {
-                if (document.querySelector("a-scene").states.length > 0)
-                  showNext();
-              } catch {
-                let itDoNothing;
-              }
+              doThisWhenClicked();
             },
             buttonup: function (evt) {
-              // console.log(evt);
+              let itDoNothing;
             },
           };
         },
@@ -64,6 +58,7 @@
     </script>
   </head>
   <body>
+    <br />
     <br /><br /><br />
     <!-- /////////////////////////////////////////// -->
     <div id="vrLoader" style="display: block">
@@ -108,6 +103,17 @@
         >
         </a-curvedimage>
 
+        <a-circle
+          id="circleBTN"
+          material="color: #ef0606;"
+          geometry="radius: 0.5"
+          position="0.00003 -2.46715 -5.46565"
+          animation="property: radius; from: 0.1; to: 0.5; dur: 300; easing: linear; loop: false"
+        ></a-circle>
+
+        <a-camera>
+          <a-cursor></a-cursor>
+        </a-camera>
         <a id="myEnterVRButton" href="#"> vr mode</a>
         <a id="changeScene" href="#"> next</a>
         <a-entity button-controls="debug: false;"></a-entity>
